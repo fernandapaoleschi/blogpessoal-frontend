@@ -10,9 +10,15 @@ function Footer() {
             </p>
             <p className="text-lg"> Acesse nossas redes sociais! </p>
             <div className="flex gap-2">
-                <FacebookLogoIcon size={48} className="bold" />
-                <InstagramLogoIcon size={48} className="bold" />
-                <LinkedinLogoIcon size={48} className="bold" />
+                <a href="https://www.linkedin.com/in/fernanda-paoleschi/" target="_blank" className="hover:opacity-75 transition-opacity">
+                    <LinkedinLogoIcon size={48} className="bold" />
+                </a>
+                <a href="https://www.instagram.com/fernanda.paoleschi/" target="_blank" className="hover:opacity-75 transition-opacity">
+                    <InstagramLogoIcon size={48} className="bold" />
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61564712594771" target="_blank" className="hover:opacity-75 transition-opacity">
+                    <FacebookLogoIcon size={48} className="bold" />
+                </a>
             </div>
         </div>
       
