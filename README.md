@@ -1,73 +1,184 @@
-# React + TypeScript + Vite
+# 📝 Blog Pessoal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto Full Stack desenvolvido com **React + TypeScript** no frontend e **NestJS + TypeORM** no backend.
 
-Currently, two official plugins are available:
+O sistema permite autenticação de usuários, cadastro, login e gerenciamento de conteúdo (postagens e temas).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Tecnologias Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend
 
-## Expanding the ESLint configuration
+* React
+* TypeScript
+* React Router DOM
+* Context API
+* TailwindCSS
+* Axios
+* React Spinners
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Backend
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* NestJS
+* TypeScript
+* TypeORM
+* MySQL
+* Class Validator
+* Swagger
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📂 Estrutura do Projeto
+
+### Frontend
+
+```
+src/
+├── assets/
+├── components/
+├── contexts/
+├── models/
+├── pages/
+├── services/
+└── App.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Backend
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── usuario/
+├── postagem/
+├── tema/
+├── auth/
+└── app.module.ts
+```
+
+---
+
+## 🔐 Funcionalidades
+
+✔️ Cadastro de usuário
+✔️ Login com autenticação
+✔️ Logout
+✔️ Context API para controle de autenticação
+✔️ Proteção de rotas
+✔️ CRUD de Postagens
+✔️ CRUD de Temas
+
+---
+
+## 👤 Modelo de Usuário
+
+```ts
+{
+  id: number
+  nome: string
+  usuario: string
+  senha: string
+  foto: string
+  token?: string
+}
+```
+
+---
+
+## ⚙️ Como executar o projeto
+
+### 📌 Clonar o repositório
+
+```bash
+git clone https://github.com/seu-usuario/blog-pessoal.git
+```
+
+---
+
+### ▶️ Backend (NestJS)
+
+#### Instalar dependências
+
+```bash
+npm install
+```
+
+#### Rodar o servidor
+
+```bash
+npm run start:dev
+```
+
+Servidor disponível em:
+
+```
+http://localhost:4000
+```
+
+Swagger:
+
+```
+http://localhost:4000/swagger
+```
+
+---
+
+### 💻 Frontend (React)
+
+#### Instalar dependências
+
+```bash
+npm install
+```
+
+#### Rodar projeto
+
+```bash
+npm run dev
+```
+
+Aplicação disponível em:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🔄 Fluxo de Autenticação
+
+* Usuário realiza login
+* Backend gera token
+* Token é salvo no AuthContext
+* Rotas protegidas verificam autenticação
+* Logout limpa o contexto
+
+---
+
+## 🧠 Aprendizados
+
+Este projeto foi desenvolvido para praticar:
+
+* Arquitetura Full Stack
+* Context API
+* Hooks do React
+* Autenticação
+* Integração Frontend + Backend
+* Boas práticas com TypeScript
+
+---
+
+## 📸 Preview
+
+(Adicione prints aqui)
+
+---
+
+## 👩‍💻 Autora
+
+Desenvolvido por **Nanda** 💜
+
+---
+
+## 📄 Licença
+
+Este projeto é apenas para fins educacionais.
