@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import Footer from './components/footer/Footer'
 import Navbar from './components/navbar/Navbar'
@@ -26,7 +26,9 @@ function App() {
 					<Navbar />
 					<div className="min-h-[80vh]">
 						<Routes>
-							<Route path="/login" element={<Login />} />
+              <Route path="/" element={<Navigate to="/login" />} />
+
+              <Route path="/login" element={<Login />} />
 							<Route path="/home" element={<Home />} />
 							<Route path="/cadastro"	element={<Cadastro />}/>
 							<Route path="/temas" element={<ListaTemas />} />
